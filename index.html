@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedir Perdón</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #333; /* Fondo gris claro */
+    }
+    #pregunta {
+        text-align: left 20px right 20px;
+        margin-bottom: 20px;
+    }
+    #botones {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #perdonar, #no {
+        font-size: 18px;
+        padding: 10px 20px;
+        border: 2px solid #333; /* Contorno fuerte */
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        margin-bottom: 10px;
+    }
+    #perdonar:hover, #no:hover {
+        background-color: #ddd;
+    }
+</style>
+</head>
+<body>
+
+<div id="pregunta">
+    <h1>¿Me perdonas?</h1>
+</div>
+
+<div id="botones">
+    <button id="perdonar">Sí</button>
+    <button id="no">No</button>
+</div>
+
+<script>
+    // Función para mover aleatoriamente el texto "No" cuando se pasa el ratón sobre él
+    document.getElementById("no").addEventListener("mouseover", function() {
+        var posX = Math.floor(Math.random() * (window.innerWidth - 100)); // Posición horizontal aleatoria
+        var posY = Math.floor(Math.random() * (window.innerHeight - 100)); // Posición vertical aleatoria
+        this.style.position = "absolute";
+        this.style.left = posX + "px";
+        this.style.top = posY + "px";
+    });
+
+    // Función para mostrar un mensaje cuando se hace clic en "Sí"
+    document.getElementById("perdonar").addEventListener("click", function() {
+        alert("Yo también te amo.");
+    });
+
+    // Función para mostrar un mensaje cuando se hace clic en "No"
+    document.getElementById("no").addEventListener("click", function() {
+        alert("Lo siento mucho.");
+    });
+</script>
+
+</body>
+</html>
